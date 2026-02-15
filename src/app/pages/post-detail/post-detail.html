@@ -1,0 +1,17 @@
+<a routerLink="/posts" class="link">← Volver</a>
+
+@if (post$ | async; as p) {
+  <section class="box">
+    <h2>{{ p.title }}</h2>
+    <p>{{ p.body }}</p>
+
+    <p class="meta"><b>ID:</b> {{ p.id }} · <b>User:</b> {{ p.userId }}</p>
+    <div class="actions">
+      <a class="btn" [routerLink]="['/posts', p.id, 'edit']">Editar</a>
+
+      <button type="button" class="btn danger" (click)="deletePost(p.id)">Borrar</button>
+    </div>
+  </section>
+} @else {
+  <p>Cargando post...</p>
+}

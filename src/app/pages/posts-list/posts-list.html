@@ -1,0 +1,19 @@
+<header class="top">
+  <h1>Posts</h1>
+  <a class="btn" routerLink="/posts/new">+ Nuevo post</a>
+</header>
+
+<div class="search">
+  <input type="text" [formControl]="searchControl" placeholder="Buscar por título o contenido…" />
+</div>
+
+<ul class="list">
+  @for (p of filteredPosts$ | async; track p.id) {
+    <li class="item">
+      <a [routerLink]="['/posts', p.id]">{{ p.title }}</a>
+      <p class="body">{{ p.body }}</p>
+    </li>
+  } @empty {
+    <li>No hay posts</li>
+  }
+</ul>

@@ -1,0 +1,17 @@
+.link {
+  text-decoration: none;
+  border-bottom: 1px dotted #888;
+}
+
+.box {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fff;
+  margin-top: 12px;
+}
+
+.meta {
+  opacity: 0.8;
+  margin-top: 10px;
+}

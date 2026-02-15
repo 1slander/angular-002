@@ -1,0 +1,19 @@
+<a routerLink="/posts" class="link">← Volver</a>
+
+<h2>{{ postId ? 'Editar post' : 'Nuevo post' }}</h2>
+
+<form class="form" [formGroup]="form" (ngSubmit)="save()">
+  <label>
+    Título
+    <input type="text" formControlName="title" />
+  </label>
+
+  <label>
+    Contenido
+    <textarea rows="6" formControlName="body"></textarea>
+  </label>
+
+  <button class="btn" type="submit">
+    {{ postId ? 'Guardar cambios' : 'Crear' }}
+  </button>
+</form>
